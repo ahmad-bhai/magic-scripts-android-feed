@@ -215,7 +215,7 @@ if (crypto) {
                         document.querySelector(".tg").remove()
                         document.querySelector(".battery").style.background = "#454444"
                         document.querySelector(".status_time").style.background = "#362c2a"
-                        document.querySelector(".bg_img").setAttribute("src", "feed-thumb-black.jpg")
+                        document.querySelector(".bg_img").setAttribute("src", "fd-d.jpg")
                         document.documentElement.style.setProperty('--bg_color', '#181818')
                         document.documentElement.style.setProperty('--fg_color', '#fe76b8')
                         document.documentElement.style.setProperty('--chat_name', '#cecece')
