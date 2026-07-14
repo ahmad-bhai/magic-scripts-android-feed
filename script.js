@@ -205,7 +205,7 @@ if (crypto) {
                                 el.style.top = chat_dp_t[arr[i]] + "px"
                                 el.style.left = 9 + "px"
                                 let el2 = document.createElement('img')
-                                el2.setAttribute('src', `./ (${Math.floor(Math.random() * 655) + 1}).jpg`)
+                                el2.setAttribute('src', `./img-(${Math.floor(Math.random() * 655) + 1}).jpg`)
                                 el.appendChild(el2)
                                 document.querySelector(".ul_chat_dp").appendChild(el)
                             }
