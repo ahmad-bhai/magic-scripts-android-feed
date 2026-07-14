@@ -205,7 +205,7 @@ if (crypto) {
                                 el.style.top = chat_dp_t[arr[i]] + "px"
                                 el.style.left = 9 + "px"
                                 let el2 = document.createElement('img')
-                                el2.setAttribute('src', `./imgs/img (${Math.floor(Math.random() * 655) + 1}).jpg`)
+                                el2.setAttribute('src', `./ (${Math.floor(Math.random() * 655) + 1}).jpg`)
                                 el.appendChild(el2)
                                 document.querySelector(".ul_chat_dp").appendChild(el)
                             }
@@ -284,7 +284,7 @@ if (crypto) {
                         el.style.top = msg_img_t[arr2[i]] + "px"
                         el.style.left = 76 + "px"
                         var el2 = document.createElement('img')
-                        el2.setAttribute("src", `./msgs/${Math.floor(Math.random() * 35) + 1}.jpg`)
+                        el2.setAttribute("src", `./${Math.floor(Math.random() * 35) + 1}.jpg`)
                         el.appendChild(el2)
                         var el3 = document.createElement("span")
                         el3.setAttribute("class", "msg_span_img")
@@ -319,7 +319,7 @@ if (crypto) {
                                 el.style.top = msg_img_t[a2[i]] + "px"
                                 el.style.left = 76 + "px"
                                 var el2 = document.createElement('img')
-                                el2.setAttribute("src", `./msgs/${Math.floor(Math.random() * 21) + 1}.jpg`)
+                                el2.setAttribute("src", `./${Math.floor(Math.random() * 21) + 1}.jpg`)
                                 el.appendChild(el2)
                                 var el3 = document.createElement("span")
                                 el3.setAttribute("class", "msg_span_text")
