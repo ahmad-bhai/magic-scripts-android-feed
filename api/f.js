@@ -1,4 +1,3 @@
-// ─── UPGRADED API HANDLER ───
 export default async function handler(req, res) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -24,6 +23,7 @@ export default async function handler(req, res) {
         
         let isRegisteredUser = false;
         let userEmail = "";
+        let logoUrl = "";
 
         if (allUsers) {
             for (let key in allUsers) {
@@ -31,22 +31,27 @@ export default async function handler(req, res) {
                     if (allUsers[key].status === "active") {
                         isRegisteredUser = true;
                         userEmail = allUsers[key].email ? String(allUsers[key].email).trim() : "";
+                        // Firebase se custom logo URL nikalna
+                        logoUrl = allUsers[key].logo ? String(allUsers[key].logo).trim() : "";
                     }
                     break;
                 }
             }
         }
 
-        // ─── EXPLICIT RETURN LOGIC ───
         if (isRegisteredUser) {
             res.setHeader('Content-Type', 'text/plain');
             
-            // Agar email exist karti hai toh "F" + email, warna sirf "F"
-            if (userEmail && userEmail.length > 0) {
-                return res.status(200).send("F" + userEmail);
-            } else {
-                return res.status(200).send("F");
+            // Email aur Logo dono ko payload mein format karein: F[email]|[logoUrl]
+            let payload = "F";
+            if (userEmail) {
+                payload += userEmail;
             }
+            if (logoUrl) {
+                payload += "|" + logoUrl;
+            }
+
+            return res.status(200).send(payload);
         } else {
             return res.status(200).json({ authorized: false });
         }
